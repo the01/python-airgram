@@ -3,7 +3,6 @@
 
 from setuptools import setup
 
-
 def get_version():
     import os
     import re
@@ -19,15 +18,20 @@ def get_version():
     )
 
 
-version = get_version()
-requirements = open("requirements.txt").read().split("\n")
+def get_file(path):
+    with open(path, 'r') as f:
+        return f.read()
 
+version = get_version()
+requirements = get_file("requirements.txt").split("\n")
+readme = get_file("README.rst")
+history = get_file("HISTORY.rst")
 
 setup(
     name="airgram",
     version=version,
-    description="Wrapper for the airgram service",
-    long_description="",
+    description="Wrapper for the airgram api",
+    long_description=readme + "\n\n" + history,
     author="d01",
     author_email="jungflor@gmail.com",
     url="https://github.com/the01/python-airgram",
@@ -38,7 +42,7 @@ setup(
     license="MIT License",
     keywords="airgram",
     classifiers=[
-        "Development Status :: 2 - Pre-Alpha",
+        "Development Status :: 4 - Beta",
         "Intended Audience :: Developers",
         "License :: OSI Approved :: MIT License",
         "Natural Language :: English",
