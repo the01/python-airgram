@@ -3,6 +3,14 @@
 History
 =======
 
+0.1.3 (2015-08-25)
+------------------
+
+BugFix
+
+* added MANIFEST.in (fix install problem)
+
+
 0.1.2 (2015-08-21)
 ------------------
 
